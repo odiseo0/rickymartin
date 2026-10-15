@@ -2,6 +2,8 @@
 
 ```sh
 pnpm create astro@latest
+pnpm astro add react
+pnpm astro add tailwind  
 ```
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
