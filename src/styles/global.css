@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+	--app-color-background: #ebebeb;
+	--app-color-foreground: #333333;
+	--app-color-header: #ffe600;
+	--app-color-accent: #3483fa;
+	--app-color-surface: #ffffff;
+	--app-color-muted: #666666;
+	--app-color-border: #dddddd;
+	--app-font-display: Inter, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
+		sans-serif;
+	--app-font-body: Inter, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
+		sans-serif;
+	--app-space-grid: 0.5rem;
+	--app-radius: 0.5rem;
+	--app-border-width: 1px;
+	--app-focus-ring: 0 0 0 3px color-mix(in oklch, var(--app-color-accent) 28%, transparent);
+	--app-shadow-raised: 0 1px 2px color-mix(in oklch, var(--app-color-foreground) 12%, transparent);
+}
+
+@theme inline {
+	--color-background: var(--app-color-background);
+	--color-foreground: var(--app-color-foreground);
+	--color-accent: var(--app-color-accent);
+	--color-header: var(--app-color-header);
+	--color-surface: var(--app-color-surface);
+	--color-muted: var(--app-color-muted);
+	--color-border: var(--app-color-border);
+	--font-display: var(--app-font-display);
+	--font-sans: var(--app-font-body);
+	--spacing-grid: var(--app-space-grid);
+	--radius-ui: var(--app-radius);
+}
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html {
+		background: var(--app-color-background);
+		color-scheme: light;
+	}
+
+	body {
+		min-height: 100vh;
+		margin: 0;
+		background: var(--app-color-background);
+		color: var(--app-color-foreground);
+		font-family: var(--app-font-body);
+		line-height: 1.5;
+		text-rendering: optimizeLegibility;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	button,
+	input,
+	select,
+	textarea {
+		font: inherit;
+	}
+
+	:focus-visible {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+		box-shadow: var(--app-focus-ring);
+	}
+
+	::selection {
+		background: color-mix(in oklch, var(--app-color-accent) 24%, transparent);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}

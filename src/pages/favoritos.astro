@@ -1,0 +1,11 @@
+---
+import FavoritesPage from '../features/favorites/pages/FavoritesPage';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Favoritos | Rick and Morty"
+	description="Consulta tus personajes favoritos de Rick and Morty."
+>
+	<FavoritesPage client:load />
+</Layout>
